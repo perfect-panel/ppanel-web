@@ -107,7 +107,7 @@ if you're interested in contributing code, feel free to check out our GitHub
 ## 📝 License
 
 Copyright © 2024 [PPanel][profile-link]. <br />
-This project is [GUN](../../LICENSE) licensed.
+This project is [GNU](../../LICENSE) licensed.
 
 <!-- LINK GROUP -->
 
