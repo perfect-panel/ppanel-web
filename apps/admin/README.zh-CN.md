@@ -107,7 +107,7 @@ pnpm dev
 ## 📝 许可证
 
 版权所有 © 2024 [PPanel][profile-link]。<br />
-本项目使用 [GUN](./LICENSE) 许可证。
+本项目使用 [GNU](./LICENSE) 许可证。
 
 <!-- LINK GROUP -->
 
