@@ -1,0 +1,30 @@
+{
+  "actions": "عملیات",
+  "announcementList": "لیست اعلان‌ها",
+  "cancel": "لغو",
+  "confirm": "تأیید",
+  "confirmDelete": "آیا مطمئن هستید که می‌خواهید حذف کنید؟",
+  "content": "محتوا",
+  "create": "ایجاد",
+  "createAnnouncement": "ایجاد اعلان",
+  "createSuccess": "ایجاد موفقیت‌آمیز بود",
+  "delete": "حذف",
+  "deleteDescription": "پس از حذف، داده‌ها قابل بازیابی نیستند. لطفاً با احتیاط اقدام کنید.",
+  "deleteSuccess": "حذف موفقیت‌آمیز بود",
+  "edit": "ویرایش",
+  "editAnnouncement": "ویرایش اعلان",
+  "enable": "فعال کردن",
+  "form": {
+    "cancel": "لغو",
+    "confirm": "تأیید",
+    "content": "محتوا",
+    "contentPlaceholder": "لطفاً محتوای اعلان را وارد کنید (پشتیبانی از Markdown)",
+    "title": "عنوان",
+    "titlePlaceholder": "لطفاً وارد کنید"
+  },
+  "hide": "مخفی کردن",
+  "show": "نمایش",
+  "title": "عنوان",
+  "updateSuccess": "به‌روزرسانی موفقیت‌آمیز بود",
+  "updatedAt": "آخرین به‌روزرسانی"
+}

@@ -1,0 +1,29 @@
+{
+  "DocumentList": "فهرست اسناد",
+  "actions": "عملیات",
+  "cancel": "لغو",
+  "confirm": "تایید",
+  "confirmDelete": "آیا از حذف این مورد مطمئن هستید؟",
+  "create": "ایجاد",
+  "createDocument": "ایجاد سند",
+  "createSuccess": "ایجاد با موفقیت انجام شد",
+  "delete": "حذف",
+  "deleteDescription": "پس از حذف، داده‌ها قابل بازیابی نیستند. لطفاً با احتیاط عمل کنید.",
+  "deleteSuccess": "حذف با موفقیت انجام شد",
+  "edit": "ویرایش",
+  "editDocument": "ویرایش سند",
+  "form": {
+    "cancel": "لغو",
+    "confirm": "تایید",
+    "content": "محتوا",
+    "tags": "برچسب‌ها",
+    "tagsPlaceholder": "برای وارد کردن چندین برچسب از Enter یا ویرگول (,) استفاده کنید",
+    "title": "عنوان",
+    "titlePlaceholder": "لطفاً وارد کنید"
+  },
+  "show": "نمایش",
+  "tags": "برچسب‌ها",
+  "title": "عنوان",
+  "updateSuccess": "به‌روزرسانی با موفقیت انجام شد",
+  "updatedAt": "به‌روزرسانی شده در"
+}
