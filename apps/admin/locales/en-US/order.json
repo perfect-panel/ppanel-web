@@ -1,29 +1,30 @@
+
 {
-  "amount": "Amount",
-  "failed": "Failed",
-  "feAmount": "Fee Amount",
-  "method": "Payment Method",
+  "amount": "مقدار",
+  "failed": "ناموفق",
+  "feAmount": "مقدار هزینه",
+  "method": "روش پرداخت",
   "methods": {
-    "alipay_f2f": "Alipay (Face to Face)",
-    "balance": "Balance",
-    "epay": "Epay",
-    "stripe_alipay": "Stripe (Alipay)",
-    "stripe_wechat_pay": "Stripe (WeChat)"
+    "alipay_f2f": "علی‌پی (حضوری)",
+    "balance": "موجودی",
+    "epay": "ای‌پی",
+    "stripe_alipay": "استرایپ (علی‌پی)",
+    "stripe_wechat_pay": "استرایپ (وی‌چت)"
   },
-  "orderNumber": "Order Number",
-  "reductionPrice": "Discount Amount",
-  "status": "Order Status",
-  "subscribe": "Subscribe",
-  "subscribePrice": "Subscription Price",
-  "total": "Total",
-  "tradeNo": "Transaction Number",
+  "orderNumber": "شماره سفارش",
+  "reductionPrice": "مقدار تخفیف",
+  "status": "وضعیت سفارش",
+  "subscribe": "اشتراک",
+  "subscribePrice": "قیمت اشتراک",
+  "total": "مجموع",
+  "tradeNo": "شماره تراکنش",
   "type": {
-    "0": "Type",
-    "1": "New Purchase",
-    "2": "Renewal",
-    "3": "Reset Traffic",
-    "4": "Recharge"
+    "0": "نوع",
+    "1": "خرید جدید",
+    "2": "تمدید",
+    "3": "بازنشانی ترافیک",
+    "4": "شارژ"
   },
-  "updateTime": "Update Time",
-  "user": "User"
+  "updateTime": "زمان بروزرسانی",
+  "user": "کاربر"
 }
