@@ -7,7 +7,7 @@
     "currencyUnit": "واحد ارز",
     "currencyUnitDescription": "فقط برای نمایش استفاده می‌شود؛ تغییر این مقدار بر تمام واحدهای ارزی سیستم تأثیر می‌گذارد.",
     "saveSuccess": "ذخیره با موفقیت انجام شد."
-  }
+  },
   "email": {
     "expiration_email_template": "قالب اطلاعیه انقضا",
     "expiration_email_templateDescription": "متغیرهای {after}.variable{before} با داده‌های واقعی جایگزین خواهند شد. اطمینان حاصل کنید که این متغیرها حفظ شوند.",
@@ -33,7 +33,7 @@
     "smtpServerPortDescription": "پورتی که برای اتصال به سرور SMTP استفاده می‌شود را مشخص کنید.",
     "verify_email_template": "قالب ایمیل تأییدیه",
     "verify_email_templateDescription": "متغیرهای {after}.variable{before} با داده‌های واقعی جایگزین خواهند شد. اطمینان حاصل کنید که این متغیرها حفظ شوند."
-  }
+  },
   "invite": {
     "commissionFirstTimeOnly": "کمیسیون فقط برای اولین خرید",
     "commissionFirstTimeOnlyDescription": "در صورت فعال بودن، کمیسیون فقط در اولین پرداخت دعوت‌کننده تولید می‌شود؛ می‌توانید کاربران را در مدیریت کاربران پیکربندی کنید.",
@@ -43,7 +43,7 @@
     "inviteCommissionPercentage": "درصد کمیسیون دعوت",
     "inviteCommissionPercentageDescription": "نسبت توزیع کمیسیون پیش‌فرض جهانی؛ می‌توانید نسبت‌های جداگانه را در مدیریت کاربران پیکربندی کنید.",
     "saveSuccess": "ذخیره با موفقیت انجام شد."
-  }
+  },
   "node": {
     "communicationKey": "کلید ارتباطی",
     "communicationKeyDescription": "کلیدی برای ارتباط با نودها جهت اطمینان از امنیت داده‌ها",
@@ -53,7 +53,7 @@
     "nodePushInterval": "فاصله زمانی ارسال اطلاعات به پنل",
     "nodePushIntervalDescription": "فرکانس ارسال داده‌ها از نودها به پنل",
     "saveSuccess": "ذخیره با موفقیت انجام شد."
-  }
+  },
   "register": {
     "emailSuffixWhitelist": "لیست سفید پسوند ایمیل",
     "emailSuffixWhitelistDescription": "در صورت فعال بودن، فقط ایمیل‌هایی با پسوندهای موجود در لیست مجاز به ثبت‌نام هستند.",
@@ -73,7 +73,7 @@
     "whitelistSuffixes": "پسوندهای لیست سفید",
     "whitelistSuffixesDescription": "برای تأیید ایمیل هنگام ثبت‌نام استفاده می‌شود؛ هر کدام را در یک خط وارد کنید.",
     "whitelistSuffixesPlaceholder": "پسوندهای ایمیل را وارد کنید، هر کدام در یک خط"
-  }
+  },
   "site": {
     "logo": "لوگو",
     "logoDescription": "برای نمایش لوگو در مکان‌های تعیین‌شده استفاده می‌شود.",
@@ -88,7 +88,7 @@
     "siteName": "نام سایت",
     "siteNameDescription": "برای نمایش نام سایت در مکان‌های تعیین‌شده استفاده می‌شود.",
     "siteNamePlaceholder": "نام سایت را وارد کنید."
-  }
+  },
   "subscription": {
     "add": "افزودن",
     "app": "اپلیکیشن",
@@ -111,7 +111,7 @@
     "subscriptionProtocol": "پروتکل اشتراک",
     "wildcardResolution": "رزولوشن وایلدکارد",
     "wildcardResolutionDescription": "برای اشتراک استفاده می‌شود."
-  }
+  },
  "tabs": {
     "currency": "واحد پول",
     "email": "ایمیل",
@@ -123,7 +123,7 @@
     "telegram": "تلگرام",
     "tos": "شرایط خدمات",
     "verify": "تأیید"
-  }
+  },
   "telegram": {
     "botToken": "توکن بات",
     "botTokenDescription": "توکنی که توسط Botfather ارائه شده است را وارد کنید.",
@@ -134,11 +134,11 @@
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
     "saveSuccess": "ذخیره با موفقیت انجام شد."
-  }
+  },
   "tos": {
     "saveSuccess": "ذخیره با موفقیت انجام شد.",
     "title": "شرایط خدمات"
-  }
+  },
   "verify": {
     "inputPlaceholder": "وارد کنید",
     "loginVerificationCode": "کد تأیید ورود",
