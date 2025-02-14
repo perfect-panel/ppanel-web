@@ -61,7 +61,7 @@ export function UserStatisticsCard() {
 
   return (
     <Tabs defaultValue='today'>
-      <Card>
+      <Card className='h-full'>
         <CardHeader className='flex !flex-row items-center justify-between'>
           <CardTitle>{t('userTitle')}</CardTitle>
           <TabsList>
@@ -71,8 +71,8 @@ export function UserStatisticsCard() {
           </TabsList>
         </CardHeader>
 
-        <TabsContent value='today'>
-          <CardContent>
+        <TabsContent value='today' className='h-full'>
+          <CardContent className='h-80'>
             {UserStatistics?.today.register ||
             UserStatistics?.today.new_order_users ||
             UserStatistics?.today.renewal_order_users ? (
@@ -133,7 +133,9 @@ export function UserStatisticsCard() {
                 </PieChart>
               </ChartContainer>
             ) : (
-              <Empty />
+              <div className='flex h-full items-center justify-center'>
+                <Empty />
+              </div>
             )}
           </CardContent>
           <CardFooter className='flex h-20 flex-row border-t p-4'>
@@ -168,8 +170,8 @@ export function UserStatisticsCard() {
           </CardFooter>
         </TabsContent>
 
-        <TabsContent value='month'>
-          <CardContent>
+        <TabsContent value='month' className='h-full'>
+          <CardContent className='h-80'>
             {UserStatistics?.monthly.list && UserStatistics?.monthly.list.length > 0 ? (
               <ChartContainer config={UserStatisticsConfig} className='max-h-80 w-full'>
                 <BarChart
@@ -204,7 +206,9 @@ export function UserStatisticsCard() {
                 </BarChart>
               </ChartContainer>
             ) : (
-              <Empty />
+              <div className='flex h-full items-center justify-center'>
+                <Empty />
+              </div>
             )}
           </CardContent>
           <CardFooter className='flex h-20 flex-row border-t p-4'>
@@ -239,8 +243,8 @@ export function UserStatisticsCard() {
           </CardFooter>
         </TabsContent>
 
-        <TabsContent value='total'>
-          <CardContent>
+        <TabsContent value='total' className='h-full'>
+          <CardContent className='h-80'>
             {UserStatistics?.all.list && UserStatistics?.all.list.length > 0 ? (
               <ChartContainer config={UserStatisticsConfig} className='max-h-80 w-full'>
                 <AreaChart
@@ -299,7 +303,9 @@ export function UserStatisticsCard() {
                 </AreaChart>
               </ChartContainer>
             ) : (
-              <Empty />
+              <div className='flex h-full items-center justify-center'>
+                <Empty />
+              </div>
             )}
           </CardContent>
           <CardFooter className='flex h-20 flex-row border-t p-4'>

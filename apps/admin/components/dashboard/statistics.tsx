@@ -149,7 +149,7 @@ export default function Statistics() {
               </TabsList>
             </Tabs>
           </CardHeader>
-          <CardContent>
+          <CardContent className='h-80'>
             <div className='mb-6 flex items-center justify-between'>
               <h4 className='font-semibold'>
                 {dataType === 'nodes' ? t('nodeTraffic') : t('userTraffic')}
@@ -230,7 +230,9 @@ export default function Statistics() {
                 </BarChart>
               </ChartContainer>
             ) : (
-              <Empty />
+              <div className='flex h-full items-center justify-center'>
+                <Empty />
+              </div>
             )}
           </CardContent>
         </Card>

@@ -59,7 +59,7 @@ export function RevenueStatisticsCard() {
 
   return (
     <Tabs defaultValue='today'>
-      <Card>
+      <Card className='h-full'>
         <CardHeader className='flex !flex-row items-center justify-between'>
           <CardTitle>{t('revenueTitle')}</CardTitle>
           <TabsList>
@@ -68,8 +68,8 @@ export function RevenueStatisticsCard() {
             <TabsTrigger value='total'>{t('total')}</TabsTrigger>
           </TabsList>
         </CardHeader>
-        <TabsContent value='today'>
-          <CardContent>
+        <TabsContent value='today' className='h-full'>
+          <CardContent className='h-80'>
             {RevenueStatistics?.today.new_order_amount ||
             RevenueStatistics?.today.renewal_order_amount ? (
               <ChartContainer config={IncomeStatisticsConfig} className='mx-auto max-h-80'>
@@ -129,7 +129,9 @@ export function RevenueStatisticsCard() {
                 </PieChart>
               </ChartContainer>
             ) : (
-              <Empty />
+              <div className='flex h-full items-center justify-center'>
+                <Empty />
+              </div>
             )}
           </CardContent>
           <CardFooter className='flex h-20 flex-row border-t p-4'>
@@ -162,8 +164,8 @@ export function RevenueStatisticsCard() {
           </CardFooter>
         </TabsContent>
 
-        <TabsContent value='month'>
-          <CardContent>
+        <TabsContent value='month' className='h-full'>
+          <CardContent className='h-80'>
             {RevenueStatistics?.monthly.list && RevenueStatistics?.monthly.list.length > 0 ? (
               <ChartContainer config={IncomeStatisticsConfig} className='max-h-80 w-full'>
                 <BarChart
@@ -196,7 +198,9 @@ export function RevenueStatisticsCard() {
                 </BarChart>
               </ChartContainer>
             ) : (
-              <Empty />
+              <div className='flex h-full items-center justify-center'>
+                <Empty />
+              </div>
             )}
           </CardContent>
           <CardFooter className='flex h-20 flex-row border-t p-4'>
@@ -232,8 +236,8 @@ export function RevenueStatisticsCard() {
           </CardFooter>
         </TabsContent>
 
-        <TabsContent value='total'>
-          <CardContent>
+        <TabsContent value='total' className='h-full'>
+          <CardContent className='h-80'>
             {RevenueStatistics?.all.list && RevenueStatistics?.all.list.length > 0 ? (
               <ChartContainer config={IncomeStatisticsConfig} className='max-h-80 w-full'>
                 <AreaChart
@@ -283,7 +287,9 @@ export function RevenueStatisticsCard() {
                 </AreaChart>
               </ChartContainer>
             ) : (
-              <Empty />
+              <div className='flex h-full items-center justify-center'>
+                <Empty />
+              </div>
             )}
           </CardContent>
           <CardFooter className='flex h-20 flex-row border-t p-4'>
