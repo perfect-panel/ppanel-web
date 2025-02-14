@@ -1,4 +1,50 @@
 <a name="readme-top"></a>
+# Changelog
+
+# [1.0.0-beta.8](https://github.com/perfect-panel/ppanel-web/compare/v1.0.0-beta.7...v1.0.0-beta.8) (2025-02-14)
+
+
+### ✨ Features
+
+* **accounts**: Update third-party account binding and unbinding ([1841552](https://github.com/perfect-panel/ppanel-web/commit/1841552))
+* **auth-control**: Adding phone number labels to mobile verification configurations in multiple languages ([046740f](https://github.com/perfect-panel/ppanel-web/commit/046740f))
+* **auth-control**: Update general ([3883646](https://github.com/perfect-panel/ppanel-web/commit/3883646))
+* **auth**: Add type parameter to SendCode and update related API typings ([4198871](https://github.com/perfect-panel/ppanel-web/commit/4198871))
+* **auth**: Refactor mobile authentication config to support whitelist functionality ([c761ec7](https://github.com/perfect-panel/ppanel-web/commit/c761ec7))
+* **device**: Modify IMEI to device identifier support ([e3f9ef6](https://github.com/perfect-panel/ppanel-web/commit/e3f9ef6))
+* **imei**: Add IMEI related internationalization support and menu items ([13c3337](https://github.com/perfect-panel/ppanel-web/commit/13c3337))
+* **locales**: Add kick offline confirmation and success messages in multiple languages ([5db5343](https://github.com/perfect-panel/ppanel-web/commit/5db5343))
+* **locales**: Update 'sms' to 'mobile' in authentication methods across multiple languages ([fea2171](https://github.com/perfect-panel/ppanel-web/commit/fea2171))
+* **log**: Add message log retrieval functionality and update related typings ([1c0ecae](https://github.com/perfect-panel/ppanel-web/commit/1c0ecae))
+* **profile**:  Update localization strings and enhance third-party account binding ([2d1effb](https://github.com/perfect-panel/ppanel-web/commit/2d1effb))
+* **release**: Extend supported platforms for Docker images, closes [#9](https://github.com/perfect-panel/ppanel-web/issues/9) ([e3a31eb](https://github.com/perfect-panel/ppanel-web/commit/e3a31eb))
+* **subscription**: Add delete user subscription functionality ([1fc3a10](https://github.com/perfect-panel/ppanel-web/commit/1fc3a10))
+* **ui**: Update input components and enhance card minimum width for better layout ([8a02310](https://github.com/perfect-panel/ppanel-web/commit/8a02310))
+* **user**: Add user Detail ([3a3d223](https://github.com/perfect-panel/ppanel-web/commit/3a3d223))
+* **user**: Add User Detail ([fdaf11b](https://github.com/perfect-panel/ppanel-web/commit/fdaf11b))
+
+
+### 🐛 Bug Fixes
+
+* **auth-control**: Fix citation error for platform values ([c940f3c](https://github.com/perfect-panel/ppanel-web/commit/c940f3c))
+* **auth-control**: Fix citation error for platform values ([28813d2](https://github.com/perfect-panel/ppanel-web/commit/28813d2))
+* **auth-control**: Rename phone_variable to phone_number in mobile verification configuration ([e5455aa](https://github.com/perfect-panel/ppanel-web/commit/e5455aa))
+* **auth**: Update authentication configuration and localization strings ([47f2c58](https://github.com/perfect-panel/ppanel-web/commit/47f2c58))
+* **locales**: Update expiration time description from minutes to seconds in multiple languages ([5bac933](https://github.com/perfect-panel/ppanel-web/commit/5bac933))
+* **notify**: Ensure user info is updated after notification settings submission ([9bc3a94](https://github.com/perfect-panel/ppanel-web/commit/9bc3a94))
+* **notify**: Set default values for notification settings to false ([3652819](https://github.com/perfect-panel/ppanel-web/commit/3652819))
+* **third-party-accounts**: Remove mobile display logic from third-party accounts component ([b4946f7](https://github.com/perfect-panel/ppanel-web/commit/b4946f7))
+* **third-party-accounts**: Update redirect property name in binding response handling ([012e83a](https://github.com/perfect-panel/ppanel-web/commit/012e83a))
+* **user**: Refactor user form validation and reset password fields ([6733fc2](https://github.com/perfect-panel/ppanel-web/commit/6733fc2))
+* **user**: Update locales ([4e7d249](https://github.com/perfect-panel/ppanel-web/commit/4e7d249))
+* **user**: Update notification and verify code settings ([574b043](https://github.com/perfect-panel/ppanel-web/commit/574b043))
+
+
+### 💄 Styles
+
+* **dashboard**: Enhance card components with full height and improved empty state handling ([ec12fc1](https://github.com/perfect-panel/ppanel-web/commit/ec12fc1))
+
+<a name="readme-top"></a>
 
 # Changelog
 
