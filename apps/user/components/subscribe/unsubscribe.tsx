@@ -22,9 +22,10 @@ import { Display } from '../display';
 interface UnsubscribeProps {
   id: number;
   allowDeduction?: boolean;
+  status?: number;
 }
 
-export default function Unsubscribe({ id, allowDeduction }: Readonly<UnsubscribeProps>) {
+export default function Unsubscribe({ id, allowDeduction, status }: Readonly<UnsubscribeProps>) {
   const t = useTranslations('subscribe.unsubscribe');
   const router = useRouter();
   const { common, getUserInfo } = useGlobalStore();
@@ -58,7 +59,7 @@ export default function Unsubscribe({ id, allowDeduction }: Readonly<Unsubscribe
     }
   };
 
-  if (!single_model && !allowDeduction) return null;
+  if ((!single_model && !allowDeduction) || status !== 1) return null;
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

@@ -220,6 +220,8 @@ export default function Content() {
                   </CardTitle>
                   {item.status !== 4 && (
                     <div className='flex flex-wrap gap-2'>
+
+                    {item.status === 1 && (
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
                           <Button size='sm' variant='destructive'>
@@ -249,13 +251,16 @@ export default function Content() {
                           </AlertDialogFooter>
                         </AlertDialogContent>
                       </AlertDialog>
+                     )}
+
                       <ResetTraffic id={item.id} replacement={item.subscribe.replacement} />
                       <Renewal id={item.id} subscribe={item.subscribe} />
 
-                      <Unsubscribe id={item.id} allowDeduction={item.subscribe.allow_deduction} />
+                      <Unsubscribe id={item.id} allowDeduction={item.subscribe.allow_deduction} status={item.status} />
                     </div>
                   )}
                 </CardHeader>
+
                 <CardContent>
                   <ul className='grid grid-cols-2 gap-3 *:flex *:flex-col *:justify-between lg:grid-cols-4'>
                     <li>
@@ -292,129 +297,134 @@ export default function Content() {
                       </span>
                     </li>
                   </ul>
-                  <Separator className='mt-4' />
-                  <Accordion type='single' collapsible defaultValue='0' className='w-full'>
-                    {getUserSubscribe(item.token, protocol)?.map((url, index) => (
-                      <AccordionItem key={url} value={String(index)}>
-                        <AccordionTrigger className='hover:no-underline'>
-                          <div className='flex w-full flex-row items-center justify-between'>
-                            <CardTitle className='text-sm font-medium'>
-                              {t('subscriptionUrl')} {index + 1}
-                            </CardTitle>
 
-                            <CopyToClipboard
-                              text={url}
-                              onCopy={(text, result) => {
-                                if (result) {
-                                  toast.success(t('copySuccess'));
-                                }
-                              }}
-                            >
-                              <span
-                                className='text-primary hover:bg-accent mr-4 flex cursor-pointer rounded p-2 text-sm'
-                                onClick={(e) => e.stopPropagation()}
-                              >
-                                <Icon icon='uil:copy' className='mr-2 size-5' />
-                                {t('copy')}
-                              </span>
-                            </CopyToClipboard>
-                          </div>
-                        </AccordionTrigger>
-                        <AccordionContent>
-                          <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
-                            {applications
-                              ?.filter((application) => {
-                                const platformApps = application.platform?.[platform];
-                                return platformApps && platformApps.length > 0;
-                              })
-                              .map((application) => {
-                                const platformApps = application.platform?.[platform];
-                                const app =
-                                  platformApps?.find((item) => item.is_default) ||
-                                  platformApps?.[0];
-                                if (!app) return null;
+                  {item.status === 1 && (
+                    <div>
+                      <Separator className='mt-4' />
+                      <Accordion type='single' collapsible defaultValue='0' className='w-full'>
+                        {getUserSubscribe(item.token, protocol)?.map((url, index) => (
+                          <AccordionItem key={url} value={String(index)}>
+                            <AccordionTrigger className='hover:no-underline'>
+                              <div className='flex w-full flex-row items-center justify-between'>
+                                <CardTitle className='text-sm font-medium'>
+                                  {t('subscriptionUrl')} {index + 1}
+                                </CardTitle>
 
-                                const handleCopy = (text: string, result: boolean) => {
-                                  if (result) {
-                                    const href = getAppSubLink(application.subscribe_type, url);
-                                    const showSuccessMessage = () => {
-                                      toast.success(
-                                        <>
-                                          <p>{t('copySuccess')}</p>
-                                          <br />
-                                          <p>{t('manualImportMessage')}</p>
-                                        </>,
-                                      );
+                                <CopyToClipboard
+                                  text={url}
+                                  onCopy={(text, result) => {
+                                    if (result) {
+                                      toast.success(t('copySuccess'));
+                                    }
+                                  }}
+                                >
+                                  <span
+                                    className='text-primary hover:bg-accent mr-4 flex cursor-pointer rounded p-2 text-sm'
+                                    onClick={(e) => e.stopPropagation()}
+                                  >
+                                    <Icon icon='uil:copy' className='mr-2 size-5' />
+                                    {t('copy')}
+                                  </span>
+                                </CopyToClipboard>
+                              </div>
+                            </AccordionTrigger>
+                            <AccordionContent>
+                              <div className='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
+                                {applications
+                                  ?.filter((application) => {
+                                    const platformApps = application.platform?.[platform];
+                                    return platformApps && platformApps.length > 0;
+                                  })
+                                  .map((application) => {
+                                    const platformApps = application.platform?.[platform];
+                                    const app =
+                                      platformApps?.find((item) => item.is_default) ||
+                                      platformApps?.[0];
+                                    if (!app) return null;
+
+                                    const handleCopy = (text: string, result: boolean) => {
+                                      if (result) {
+                                        const href = getAppSubLink(application.subscribe_type, url);
+                                        const showSuccessMessage = () => {
+                                          toast.success(
+                                            <>
+                                              <p>{t('copySuccess')}</p>
+                                              <br />
+                                              <p>{t('manualImportMessage')}</p>
+                                            </>,
+                                          );
+                                        };
+
+                                        if (isBrowser() && href) {
+                                          window.location.href = href;
+                                          const checkRedirect = setTimeout(() => {
+                                            if (window.location.href !== href) {
+                                              showSuccessMessage();
+                                            }
+                                            clearTimeout(checkRedirect);
+                                          }, 1000);
+                                          return;
+                                        }
+
+                                        showSuccessMessage();
+                                      }
                                     };
 
-                                    if (isBrowser() && href) {
-                                      window.location.href = href;
-                                      const checkRedirect = setTimeout(() => {
-                                        if (window.location.href !== href) {
-                                          showSuccessMessage();
-                                        }
-                                        clearTimeout(checkRedirect);
-                                      }, 1000);
-                                      return;
-                                    }
-
-                                    showSuccessMessage();
-                                  }
-                                };
-
-                                return (
-                                  <div
-                                    key={application.name}
-                                    className='text-muted-foreground flex size-full flex-col items-center justify-between gap-2 text-xs'
-                                  >
-                                    <span>{application.name}</span>
-
-                                    {application.icon && (
-                                      <Image
-                                        src={application.icon}
-                                        alt={application.name}
-                                        width={64}
-                                        height={64}
-                                        className='p-1'
-                                      />
-                                    )}
-                                    <div className='flex'>
-                                      <Button
-                                        size='sm'
-                                        variant='secondary'
-                                        className='rounded-r-none px-1.5'
-                                        asChild
+                                    return (
+                                      <div
+                                        key={application.name}
+                                        className='text-muted-foreground flex size-full flex-col items-center justify-between gap-2 text-xs'
                                       >
-                                        <Link href={app.url}>{t('download')}</Link>
-                                      </Button>
+                                        <span>{application.name}</span>
 
-                                      <CopyToClipboard
-                                        text={getAppSubLink(application.subscribe_type, url) || url}
-                                        onCopy={handleCopy}
-                                      >
-                                        <Button size='sm' className='rounded-l-none p-2'>
-                                          {t('import')}
-                                        </Button>
-                                      </CopyToClipboard>
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            <div className='text-muted-foreground hidden size-full flex-col items-center justify-between gap-2 text-sm lg:flex'>
-                              <span>{t('qrCode')}</span>
-                              <QRCodeCanvas
-                                value={url}
-                                size={80}
-                                bgColor='transparent'
-                                fgColor='rgb(59, 130, 246)'
-                              />
-                              <span className='text-center'>{t('scanToSubscribe')}</span>
-                            </div>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
+                                        {application.icon && (
+                                          <Image
+                                            src={application.icon}
+                                            alt={application.name}
+                                            width={64}
+                                            height={64}
+                                            className='p-1'
+                                          />
+                                        )}
+                                        <div className='flex'>
+                                          <Button
+                                            size='sm'
+                                            variant='secondary'
+                                            className='rounded-r-none px-1.5'
+                                            asChild
+                                          >
+                                            <Link href={app.url}>{t('download')}</Link>
+                                          </Button>
+
+                                          <CopyToClipboard
+                                            text={getAppSubLink(application.subscribe_type, url) || url}
+                                            onCopy={handleCopy}
+                                          >
+                                            <Button size='sm' className='rounded-l-none p-2'>
+                                              {t('import')}
+                                            </Button>
+                                          </CopyToClipboard>
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                <div className='text-muted-foreground hidden size-full flex-col items-center justify-between gap-2 text-sm lg:flex'>
+                                  <span>{t('qrCode')}</span>
+                                  <QRCodeCanvas
+                                    value={url}
+                                    size={80}
+                                    bgColor='transparent'
+                                    fgColor='rgb(59, 130, 246)'
+                                  />
+                                  <span className='text-center'>{t('scanToSubscribe')}</span>
+                                </div>
+                              </div>
+                            </AccordionContent>
+                          </AccordionItem>
+                        ))}
+                      </Accordion>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             );
